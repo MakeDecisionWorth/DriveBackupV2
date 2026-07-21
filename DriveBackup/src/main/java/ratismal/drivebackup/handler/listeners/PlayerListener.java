@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import ratismal.drivebackup.UploadThread;
+import ratismal.drivebackup.config.ConfigParser;
 import ratismal.drivebackup.config.Localization;
 import ratismal.drivebackup.config.PermissionHandler;
 import ratismal.drivebackup.constants.Permission;
@@ -17,11 +18,14 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        if (ConfigParser.getConfig().backupStorage.shouldIgnoreNpcs && player.hasMetadata("NPC")) {
+            return;
+        }
         if (!autoBackupsActive) {
             MessageUtil.Builder().mmText(Localization.intl("player-join-backup-enable")).send();
             autoBackupsActive = true;
         }
-        Player player = event.getPlayer();
         if (UpdateChecker.isUpdateAvailable() && PermissionHandler.hasPerm(player, Permission.LINK_ACCOUNTS)) {
             MessageUtil.Builder().mmText(Localization.intl("player-join-update-available")).to(player).toConsole(false).send();
         }

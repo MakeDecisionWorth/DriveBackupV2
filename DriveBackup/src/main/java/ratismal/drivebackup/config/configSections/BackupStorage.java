@@ -17,6 +17,7 @@ public class BackupStorage {
     public final int localKeepCount;
     public final int zipCompression;
     public final boolean backupsRequirePlayers;
+    public final boolean shouldIgnoreNpcs;
     public final boolean disableSavingDuringBackups;
     public final String localDirectory;
     public final String remoteDirectory;
@@ -28,6 +29,7 @@ public class BackupStorage {
         int localKeepCount,
         int zipCompression,
         boolean backupsRequirePlayers,
+        boolean shouldIgnoreNpcs,
         boolean disableSavingDuringBackups,
         String localDirectory,
         String remoteDirectory
@@ -39,6 +41,7 @@ public class BackupStorage {
         this.localKeepCount = localKeepCount;
         this.zipCompression = zipCompression;
         this.backupsRequirePlayers = backupsRequirePlayers;
+        this.shouldIgnoreNpcs = shouldIgnoreNpcs;
         this.disableSavingDuringBackups = disableSavingDuringBackups;
         this.localDirectory = localDirectory;
         this.remoteDirectory = remoteDirectory;
@@ -80,6 +83,7 @@ public class BackupStorage {
             zipCompression = Deflater.BEST_COMPRESSION;
         }
         boolean backupsRequirePlayers = config.getBoolean("backups-require-players");
+        boolean shouldIgnoreNpcs = config.getBoolean("should-ignore-npcs");
         boolean disableSavingDuringBackups = config.getBoolean("disable-saving-during-backups");
         String localDirectory = config.getString("local-save-directory");
         if (localDirectory.startsWith("/")) {
@@ -87,6 +91,6 @@ public class BackupStorage {
             localDirectory = localDirectory.substring(1);
         }
         String remoteDirectory = config.getString("remote-save-directory");
-        return new BackupStorage(delay, threadPriority, keepCount, localKeepCount, zipCompression, backupsRequirePlayers, disableSavingDuringBackups, localDirectory, remoteDirectory);
+        return new BackupStorage(delay, threadPriority, keepCount, localKeepCount, zipCompression, backupsRequirePlayers, shouldIgnoreNpcs, disableSavingDuringBackups, localDirectory, remoteDirectory);
     }
 }
