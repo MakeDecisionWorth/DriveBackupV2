@@ -187,11 +187,11 @@ local-backup-file-deleted: 'Локальная резервная копия "<l
 local-backup-file-failed-to-delete: 'Ошибка удаления локальной резервной копии "<local-backup-name>"'
 local-backup-in-backup-folder: "<files-in-backup-folder-count> файл(ов) не
   включены в резервную копию, т.к они в папке для резервных копий"
-local-backup-limit-not-reached: "Лимит локальных копий не достигнут (<backup-count> из <backup-limit>), пропуск чистки"
+local-backup-limit-not-reached: "Лимит локальных копий не достигнут (<backup-count> из <backup-limit>), пропуск очистки"
 local-backup-limit-reached: "Текущее количество файлов: <backup-count> превышает локальный
   лимит: <backup-limit>, удаление самых старых"
-local-backup-no-limit: "Лимит локальных копий = 0, пропуск чистки"
-local-backup-pruning-complete: 'Завершена чистка локальных копий по пути "<location>"'
+local-backup-no-limit: "Лимит локальных копий = 0, пропуск очистки"
+local-backup-pruning-complete: 'Завершена очистка локальных копий по пути "<location>"'
 local-backup-pruning-start: 'Очистка локальных резервных копий по пути "<location>"'
 local-keep-count-invalid: "Значение локального поля keep-count выставлено неверно, поле сброшено"
 local-save-directory-not-relative: "Путь для локального сохранения не является относительным: делаем его относительным к папке сервера"
