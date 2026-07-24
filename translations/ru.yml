@@ -195,7 +195,7 @@ local-backup-pruning-complete: 'Завершена очистка локальн
 local-backup-pruning-start: 'Очистка локальных резервных копий по пути "<location>"'
 local-keep-count-invalid: "Значение локального поля keep-count выставлено неверно, поле сброшено"
 local-save-directory-not-relative: "Путь для локального сохранения не является относительным: делаем его относительным к папке сервера"
-location-empty: "По пути <location> есть файлы, пропуск"
+location-empty: "Путь <location> пуст, пропуск"
 metrics-error: "Не удалось начать отслеживание метрик"
 metrics-started: "Начато отслеживание метрик"
 next-backup: "Следующая резервная копия через %TIME мин."
