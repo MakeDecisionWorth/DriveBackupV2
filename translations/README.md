@@ -4,7 +4,7 @@ As users contribute translations of the plugin's `intl.yml`, they will appear he
 
 # Currently translated languages
 - Chinese (by [JohnsonRan](https://github.com/JohnsonRan))
-- Russian (by 2006lev)
+- Russian (by [ImGreyCat](https://github.com/ImGreyCat))
 - Portuguese (by Atoidi)
 - Korean (by [Esherloon](https://github.com/jinoo2005609))
 - Ukranian (by [AKRGamesUa](https://github.com/AKRGamesUa))
