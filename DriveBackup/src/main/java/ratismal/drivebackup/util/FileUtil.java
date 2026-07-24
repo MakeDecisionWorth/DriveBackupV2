@@ -1,5 +1,6 @@
 package ratismal.drivebackup.util;
 
+import org.apache.commons.lang.SystemUtils;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import ratismal.drivebackup.UploadThread.UploadLogger;
@@ -332,9 +333,16 @@ public class FileUtil {
      */
     public static List<Path> generateGlobFolderList(String glob, String rootPath) {
         PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher("glob:./" + glob);
-        List<Path> list = new ArrayList<Path>();
+        List<Path> list = new ArrayList<>();
         try (Stream<Path> walk = Files.walk(Paths.get(rootPath))) {
-            list = walk.filter(pathMatcher::matches).filter(Files::isDirectory).collect(Collectors.toList());
+            Stream<Path> stream = walk.filter(pathMatcher::matches).filter(Files::isDirectory);
+            if (SystemUtils.IS_OS_WINDOWS) {
+                stream = stream.filter(path -> {
+                    String name = path.toString();
+                    return !name.contains("System Volume Information") && !name.contains("$RECYCLE.BIN");
+                });
+            }
+            list = stream.collect(Collectors.toList());
         } catch (IOException exception) {
             return list;
         }
