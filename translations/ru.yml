@@ -96,10 +96,10 @@ drivebackup-help-command: |-
   <gold><click:run_command:/drivebackup commands>/drivebackup commands</click></gold> - Отображает помощь для команды
   <gold><click:run_command:/drivebackup v>/drivebackup [v|version]</click></gold> - Отображает версию плагина
   <gold><click:run_command:/drivebackup linkaccount googledrive>/drivebackup [link|linkaccount] googledrive</click></gold> - Привязка Google Диска для создания копий
-  <gold><click:run_command:/drivebackup linkaccount CloudTumor>/drivebackup [link|linkaccount] CloudTumor</click></gold> - Привязка CloudTumor для создания копий
+  <gold><click:run_command:/drivebackup linkaccount OneDrive>/drivebackup [link|linkaccount] OneDrive</click></gold> - Привязка OneDrive для создания копий
   <gold><click:run_command:/drivebackup linkaccount dropbox>/drivebackup [link|linkaccount] dropbox</click></gold> - Привязка Dropbox для создания копий
   <gold><click:run_command:/drivebackup unlinkaccount googledrive>/drivebackup [unlink|unlinkaccount] googledrive</click></gold> - Отвязка Google Диска
-  <gold><click:run_command:/drivebackup unlinkaccount CloudTumor>/drivebackup [unlink|unlinkaccount] CloudTumor</click></gold> - Отвязка CloudTumor
+  <gold><click:run_command:/drivebackup unlinkaccount OneDrive>/drivebackup [unlink|unlinkaccount] OneDrive</click></gold> - Отвязка OneDrive
   <gold><click:run_command:/drivebackup unlinkaccount dropbox>/drivebackup [unlink|unlinkaccount] dropbox</click></gold> - Отвязка Dropbox
   <gold><click:run_command:/drivebackup reloadconfig>/drivebackup reloadconfig</click></gold> - Перезагрузить настройки из config.yml
   <gold><click:run_command:/drivebackup debug>/drivebackup debug</click></gold> - Сбор полезной информации для устранения неполадок
@@ -108,7 +108,7 @@ drivebackup-help-command: |-
   <gold><click:run_command:/drivebackup backup>/drivebackup backup</click></gold> - Создать резервную копию вручную
   <gold><click:run_command:/drivebackup test ftp>/drivebackup test ftp</click></gold> - Проверить соединение с (S)FTP-сервером
   <gold><click:run_command:/drivebackup test googledrive>/drivebackup test googledrive</click></gold> - Проверить соединение с Google Диском
-  <gold><click:run_command:/drivebackup test CloudTumor>/drivebackup test CloudTumor</click></gold> - Проверить соединение с CloudTumor
+  <gold><click:run_command:/drivebackup test OneDrive>/drivebackup test OneDrive</click></gold> - Проверить соединение с OneDrive
   <gold><click:run_command:/drivebackup test dropbox>/drivebackup test dropbox</click></gold> - Проверить соединение с Dropbox
   <gold><click:run_command:/drivebackup update>/drivebackup update</click></gold> - Проверить обновления плагина и обновить его
 drivebackup-version-command: |-
