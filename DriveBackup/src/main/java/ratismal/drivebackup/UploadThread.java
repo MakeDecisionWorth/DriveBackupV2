@@ -3,6 +3,7 @@ package ratismal.drivebackup;
 import com.google.api.client.util.Strings;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -315,7 +316,14 @@ public class UploadThread implements Runnable {
         if (initiator == null) {
             logger.broadcast(getNextAutoBackup());
         }
-        if (config.backupStorage.backupsRequirePlayers && Bukkit.getOnlinePlayers().isEmpty() && PlayerListener.isAutoBackupsActive()) {
+        boolean noPlayerOnline = true;
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            if (!(config.backupStorage.shouldIgnoreNpcs && player.hasMetadata("NPC"))) {
+                noPlayerOnline = false;
+                break;
+            }
+        }
+        if (config.backupStorage.backupsRequirePlayers && noPlayerOnline && PlayerListener.isAutoBackupsActive()) {
             logger.info(intl("backup-disabled-inactivity"));
             PlayerListener.setAutoBackupsActive(false);
         }

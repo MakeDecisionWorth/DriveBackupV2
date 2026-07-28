@@ -82,6 +82,7 @@ public class DebugCollector {
 
     private static class ConfigInfo {
         private final boolean backupsRequirePlayers;
+        private final boolean shouldIgnoreNpcs;
         private final boolean disableSavingDuringBackups;
 
         private final BackupScheduling scheduleBackups;
@@ -98,6 +99,7 @@ public class DebugCollector {
         private ConfigInfo() {
             Config config = ConfigParser.getConfig();
             this.backupsRequirePlayers = config.backupStorage.backupsRequirePlayers;
+            this.shouldIgnoreNpcs = config.backupStorage.shouldIgnoreNpcs;
             this.disableSavingDuringBackups = config.backupStorage.disableSavingDuringBackups;
             this.scheduleBackups = config.backupScheduling;
             this.backupList = config.backupList;
